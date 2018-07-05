@@ -23,7 +23,8 @@ class ContactosAppModel {
 	var Contacto contactoSeleccionado;
 	var Contacto example = new Contacto;
 	var Repo home = new Repo()
-	//var String busqueda = ""
+	var String busqueda = ""
+	var List<Contacto> resultado
 	
 		
 	
@@ -48,17 +49,22 @@ class ContactosAppModel {
 	
 //	def search() {
 //		home.search(busqueda)
-//		contactos = home.resultado
+//		resultado = home.resultado
+//		contactos = resultado
+//		if(resultado.isEmpty){
+//				this.update
+//		}
+//		
 //		
 //	}
-//	
-//	
-//
-//	def validarBusqueda(){
-//		if (busqueda == ""){
-//			throw new UserException("No se encuentra contacto en la agenda")
-//		}
-//	}
+	
+	
+
+	def validarBusqueda(){
+		if (busqueda == ""){
+			throw new UserException("No se encuentra contacto en la agenda")
+		}
+	}
 	
 	
 //	def update(){

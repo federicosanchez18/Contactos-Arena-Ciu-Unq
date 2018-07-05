@@ -100,7 +100,7 @@ class ContactosWindow extends TransactionalDialog<ContactosAppModel> {
 	}
 	
 	def agregar(){
-		//this.modelObject.validarCreacion
+		
 		this.modelObject.agregarContacto;
 	}
 	

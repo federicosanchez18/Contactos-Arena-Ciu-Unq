@@ -8,7 +8,7 @@ import org.uqbar.commons.model.exceptions.UserException
 class Repo {
 		
 			var List<Contacto> contactos = newArrayList();
-			//var List<Contacto> resultado = newArrayList()
+			//var List<Contacto> resultado = newArrayList();
 			
 			
 			new(){
@@ -74,13 +74,16 @@ class Repo {
 	
 //	def search(String nombre) {
 //		
-//		if(nombre == null){
+//		if(nombre === null){
+//					
 //					resultado = contactos
 //		}
 //		else{
 //			resultado =	contactos.filter[contacto | (nombre == contacto.nombre) && (nombre == contacto.apellido)].toList
 //			
 //		}
+//		
+//		
 //		}
 		
 		

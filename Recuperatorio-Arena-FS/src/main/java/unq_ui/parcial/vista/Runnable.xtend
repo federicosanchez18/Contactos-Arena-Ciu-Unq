@@ -14,7 +14,7 @@ class Runnable extends Application {
 
 
 	static def void main(String[] args) {
-		new Runnable().start
+		new Runnable().start()
 	}
 
 }
