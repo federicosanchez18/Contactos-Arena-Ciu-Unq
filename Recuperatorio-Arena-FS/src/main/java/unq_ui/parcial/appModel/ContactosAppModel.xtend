@@ -12,7 +12,7 @@ import org.uqbar.commons.model.exceptions.UserException
 class ContactosAppModel {
 
 			new(){
-					boostrap();
+					update();
 			
 		
 	}
@@ -22,65 +22,50 @@ class ContactosAppModel {
 	var List<Contacto> contactos = newArrayList();
 	var Contacto contactoSeleccionado;
 	var Contacto example = new Contacto;
+	var Repo home = new Repo()
+	//var String busqueda = ""
 	
-	var Contacto contactoLisa = new Contacto() => [
-								nombre = "Lisa"
-								apellido = "Romero"
-								email = "lisa@gmail.com"
-								telefono = 1133445566
-							];
-	var Contacto contactoMauro = new Contacto() => [
-								 nombre = "Mauro"
-								 apellido= "Marino"
-								 email= "mauro@gmail.com"
-								 telefono = 1144556677
-								]; 	
-	var Contacto contactoColo = new Contacto() => [
-								nombre =  "Jose"
-								apellido = "Sanchez"
-								email = "colo@gmail.com"
-								telefono = 1199887766
-								];
-	var Contacto contactoAprobameWacho = new Contacto() =>[
-								nombre = "Aprobrame"
-								apellido = " Wacho"
-								email = "traemeLaCoMessi@gmai.com"
-								telefono = 1122228889
-								];																		
-							
 		
 	
 	
-	def boostrap() {
-		 	this.contactos.add(this.contactoMauro)
-			this.contactos.add(this.contactoColo);
-			this.contactos.add(this.contactoLisa);
-			this.contactos.add(this.contactoAprobameWacho);
-	}
-	
 	
 	def agregarContacto(){
-			contactos.add(this.example);
+			home.agregarContacto(this.example);
 			this.example = new Contacto()
 			this.update;
 	}
 	
-	def validarCreacion() {
-		if(contactoSeleccionado.nombre === null || contactoSeleccionado.nombre == "") {throw new UserException("Completar nombre")}
-		if(contactoSeleccionado.apellido === null ||contactoSeleccionado.apellido == "") {throw new UserException("Completar apellido")}
-		if(contactoSeleccionado.email === null || contactoSeleccionado.email == ""){throw new UserException("Completar email")}	
-		if(!contactoSeleccionado.email.contains("@")) {throw new UserException("agregar arroba en tu email")};
-			
-		
-	
-	}
-	
 	
 	def update(){
-		
-		ObservableUtils.firePropertyChanged(this, "contactos")
-		 
+		contactos = #[]
+		contactos = home.contactos;
+	}	
+	
+	def actualizarDatos(){
+		contactoSeleccionado.validar
+		this.update()
 	}
+	
+//	def search() {
+//		home.search(busqueda)
+//		contactos = home.resultado
+//		
+//	}
+//	
+//	
+//
+//	def validarBusqueda(){
+//		if (busqueda == ""){
+//			throw new UserException("No se encuentra contacto en la agenda")
+//		}
+//	}
+	
+	
+//	def update(){
+//		
+//		ObservableUtils.firePropertyChanged(this, "contactos")
+//		 
+//	}
 
 	
 	
